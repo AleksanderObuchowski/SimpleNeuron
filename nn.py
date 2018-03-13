@@ -1,71 +1,63 @@
-import random
-import numpy as np
 
-import math
 
-def sigmoid(x):
-    return 1 / (1 + math.exp(-x))
+import numpy
+import scipy.special
+
+
 
 class NeuralNetwork:
-    def __init__(self,a,b,c):
-        self.input_neurons = a
-        self.hidden_neurons = b
-        self.output_neurons = c
-        self.weights_ih = np.random.rand(self.hidden_neurons,self.input_neurons) #is <0;1> should be <-1;1>
-        self.weights_ho = np.random.rand(self.output_neurons,self.hidden_neurons) #is <0;1> should be <-1;1>
-        self.bias_h= np.random.rand(self.hidden_neurons)
-        self.bias_o= np.random.rand(self.output_neurons)
-    def feedforward(self,input):
-        #print("weights")
-        #print(self.weights_ih)
-        #print("input")
-        #print(input)
-        self.hidden = np.matmul(self.weights_ih,input)
-        #print("input x weights")
-        #print(self.hidden)
-        self.hidden = np.add(self.bias_h,self.hidden)
-        #print("bias")
-        #print(self.bias_h)
-        #print("input x weights + bias")
-        #print(self.hidden)
-        self.hidden = np.array(map(sigmoid, self.hidden))
-        #print("map")
-        #print(self.hidden)
-        #print("weights h --> o")
-        #print(self.weights_ho)
-        self.hidden = np.resize(self.hidden,(self.hidden_neurons,1))
-        #print("resize")
-        #print(self.hidden)
-        self.output = np.matmul(self.weights_ho,self.hidden)
-        #print("output")
-        #print(self.output)
-        self.output = np.add(self.bias_o,self.output)
-        #print("output")
-        #print(self.output)
-        self.output = np.array(map(sigmoid,self.output))
-        return self.output
+    def __init__(self,nodes,learningrate):
+        
 
-    def train(self,inputs,targets):
-        self.outputs = self.feedforward(inputs)
-        print("outputs")
-        print(self.outputs)
-        print("targets")
-        print(targets)
-        self.output_errors = np.subtract(targets,self.outputs)
-        print("error")
-        print(self.output_errors)
-        print(self.weights_ho)
-        self.weights_ho2 = self.weights_ho.copy()
-        self.weights_ho2= self.weights_ho2.transpose()
-        self.hidden_errors = np.matmul(self.weights_ho2,self.output_errors)
-        print(self.weights_ho2)
-        print(self.hidden_errors)
-        #self.hidden_errors = _______
-nn = NeuralNetwork(2,2,1)
+        self.nodes = nodes
+        self.lr = learningrate
+        
+        
+        #initializing weights
+        self.weights = []
+        for i in range(0,len(self.nodes)-1):
+            self.weights.append(numpy.random.rand(self.nodes[i+1],self.nodes[i])-0.5)
+        
+        self.activation_function = lambda x:scipy.special.expit(x)
+     
+        pass
+        
+    def train(self,inputs_list,targets_list):
+        
+        self.outputs = []
+        
+        # convert inputs list to 2d array 
+        
+        self.outputs.append(numpy.array(inputs_list, ndmin=2).T)
+        
+        for i in range(1,len(self.weights)+1):
+            self.outputs.append(self.activation_function(numpy.dot(self.weights[i-1],self.outputs[i-1])))
+            
+        
+        
+        targets = numpy.array(targets_list,ndmin=2).T
+        self.errors = []
+        self.errors.append(targets - self.outputs[-1])  
+        for i in range(1,len(self.weights)):
+            self.errors.append(numpy.dot(self.weights[-i].T, self.errors[i-1]))
+        for i in range(1,len(self.weights)+1):
+            self.weights[-i] += self.lr*numpy.dot((self.errors[i-1]*self.outputs[-i]*(1.0 - self.outputs[-i])),numpy.transpose(self.outputs[-i-1]))
+        
+        
+        
+        pass
+        
+    def query(self,inputs_list):
+        
+        #converting inputs to 2D vertical array
+        self.inputs = []
+        self.inputs.append(numpy.array(inputs_list, ndmin=2).T)
+        
+        for i in range(1,len(self.weights)+1):
+            self.inputs.append(self.activation_function(numpy.dot(self.weights[i-1],self.inputs[i-1])))
+            
+        
+        return self.inputs[-1]
+        
+        
 
-input = [2,2]
-target = [0]
-output = nn.feedforward(input);
-#print("final output")
-print(output)
-nn.train(input,target)
