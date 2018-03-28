@@ -22,7 +22,7 @@ Neuraln network consists, as the name indicates, of neurons. Each neuron takes a
 
 All **inputs** typically have a range 0.00 to 1.00 . Zero means that there is little to no chance of something and one meaning we are almost sure that there is something
 
-**Weights ** have a range -1.00 to 1.00. -1 means that the inputs work against of the the thing we are trying to predict and 1 means it acts in favour of it.
+**Weights** have a range -1.00 to 1.00. -1 means that the inputs work against of the the thing we are trying to predict and 1 means it acts in favour of it.
 
 The goal of neral network is to adjust its weights so that it, with some certainty, can predict soulution form the inputs. If some input is  more important and it acts in favour of some action it should have positive weight close to 1. If it is not that important the weight should be around 0. and if the input works against an action it should have negative weight close to -1.
 
