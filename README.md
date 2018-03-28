@@ -1,6 +1,6 @@
 # Simple Neuron
 
-Simple Neuron is my project of simple pyhton neural network library. It's easy to use and ilustrates how neural networks work.
+Simple Neuron is my project of simple pyhton neural network library. It's easy to use and illustrates how neural networks works.
 ## Requirements
 
 ```python
