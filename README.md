@@ -1,6 +1,9 @@
 # Simple Neuron
 
-Simple Neuron is my project of simple pyhton neural network library. It's easy to use and illustrates how neural networks works.
+Simple Neuron is my project of simple python neural network library. It's easy to use and illustrates how neural networks works.
+
+[TOC]
+
 ## Requirements
 
 ```python
@@ -33,7 +36,8 @@ Let's consider an example below. We are trying to predict if there is a cat on a
 [![cat](https://i.imgur.com/AkMXLMg.png "cat")](https://i.imgur.com/AkMXLMg.png "cat")
 
 Of course we know that cats have tails, four paws and two eyes, but they don't have horns. That's why inputs  **1**, **2** and **4** should have **positive** weights. If we know there is a tail, this should increase the chance that there is a cat. On the other hand input 3 should have negative weight, because if we know there is a horn, we can be sceptical about image presenting a cat. If we have shown our neural network thousand of images of cats we can hope that it will learn that cats don't have horns and put negative weight in the input whose role was to deduce if there is a horn. However we can't know for sure what neural network picked as important and what it didn't, all inputs and outputs are just numers that somehow lead to the solution
-### Activation Function
+
+#### Activation Function
 
 ------------
 The sum of inputs multiplied by their weights can often be larger than 1 or less than 0, that's why we need something called **activation function**. Activation fuction applied to the output limits it to the range (0.00,1.00). An example of such funtion is **sigmoid **.
@@ -42,7 +46,7 @@ The sum of inputs multiplied by their weights can often be larger than 1 or less
 
 As the argumenst approch infinity the function aproches 1, as they approach minus nfinity it approches 0 with the value of 0.5 at when the argument is equal to 0.
 
-### Layers
+#### Layers
 ------------
 
 Full neural network consists of not one but many neurons arragned in **layers**, each layer takes the  output of the previous one and threats it as input 
@@ -50,7 +54,14 @@ Full neural network consists of not one but many neurons arragned in **layers**,
 [![layers](https://i.imgur.com/njeYOhI.png "layers")](https://i.imgur.com/njeYOhI.png "layers")
 
 
-### Weights
+#### Weights
 ------------
+Let's consider an neural network with 2 layers, firs one has 3 neurons and the second one has 2 neurons.
+![weights](https://i.imgur.com/YHD5ROU.png)
 
+In this layer inputs to layer B should look like this:
 
+![b1](https://i.imgur.com/v9xTCPN.png)
+![b2](https://i.imgur.com/ESwR61r.png)
+
+We can use **Matrix multiplication** to simplify this process
