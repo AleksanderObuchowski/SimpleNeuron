@@ -62,6 +62,9 @@ Let's consider an neural network with 2 layers, firs one has 3 neurons and the s
 In this layer inputs to layer B should look like this:
 
 ![b1](https://i.imgur.com/v9xTCPN.png)
+
+- - -
 ![b2](https://i.imgur.com/ESwR61r.png)
 
 We can use **Matrix multiplication** to simplify this process
+![matrix](https://i.imgur.com/j272ldD.png)
