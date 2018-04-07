@@ -2,14 +2,21 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-
-
-  - [How it works?](#how-it-works)
+- [HOW IT WORKS - THEORY](#how-it-works---theory)
       - [Neurons](#neurons)
           - [Example](#example)
       - [Activation Function](#activation-function)
       - [Layers](#layers)
       - [Weights](#weights)
+      - [HOW DOES NEURAL NETWORK LEARN?](#how-does-neural-network-learn)
+        - [Errors](#errors)
+        - [Errors on layers](#errors-on-layers)
+        - [Learning](#learning)
+- [HOW IT WORKS  - PYTHON](#how-it-works----python)
+- [INSTALATION](#instalation)
+      - [Requirements](#requirements)
+      - [Installing SimpleNueron](#installing-simplenueron)
+- [USAGE](#usage)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -17,7 +24,7 @@
 
 
 
-# How it works? - Theory
+# HOW IT WORKS - THEORY
 
 
 #### Neurons
@@ -75,13 +82,13 @@ We can use **Matrix multiplication** to simplify this process
 ![matrix](https://i.imgur.com/j272ldD.png)
 
 
-####HOW DOES NEURAL NETWORK LEARN?
+#### HOW DOES NEURAL NETWORK LEARN?
 
 
 
 _ _ _
 
-#####Errors
+##### Errors
 - - -
 In order for neural network to learn it first has to know about the mistakes it's making. Let's concider following example:
 ![erroer](https://i.imgur.com/0897Cjp.png)
@@ -90,7 +97,7 @@ Lest's say we guessed the value of Y1 but it's wrong and we know the error. Let'
 ![](https://i.imgur.com/NV1ZNFR.png)
 ![](https://i.imgur.com/G88y0W7.png)
 
-#####Errors on layers
+##### Errors on layers
 
 
 
@@ -124,6 +131,54 @@ We can now write the general priciple:
 
 With this alghoritm we can desribe errors from the end to the beggigng of the neural network
 
-#####Learning
+##### Learning
 - - -
-Ok we now know the erros but how can we adjust the weights to correct them?
+Ok we now know the erros but how can we adjust the weight to correct them?
+
+
+
+# HOW IT WORKS  - PYTHON
+
+works in progress
+
+# INSTALATION
+#### Requirements
+Simple neuron requires libraries :
+Numpy
+Scipy
+
+to install them you can simply do it with pip:
+```
+pip install numpy
+
+```
+```
+pip install scipy
+
+```
+#### Installing SimpleNueron
+To install SimpleNeuron you all you have to do is copy the SimpleNeuron.py file to your directory
+
+
+
+# USAGE
+
+First you need to imporst NeuralNetwork object
+```
+from SimpleNeuron import NeuralNetwork
+```
+then you need to initialize neural network object, it takes 2 parameters as input table consisting of numbers of neurons in each layer and learning rate, for example:
+
+```
+nn = NeuralNetwork([3,6,8],0.3)
+```
+will create a neural network with 3 layears consisting, as follows 3,6,8 neurons with learning rate of 0.3
+Then you will have to train your network on some data for this you use:
+```
+nn.learn(input,output)
+```
+finally when your network is trained you can use predict function to predict output based on input:
+
+```
+nn.predict(input)
+```
