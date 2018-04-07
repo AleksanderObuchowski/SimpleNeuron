@@ -1,9 +1,9 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**
 
-- [Simple Neuron](#simple-neuron)
-  - [Requirements](#requirements)
+
+
   - [How it works?](#how-it-works)
       - [Neurons](#neurons)
           - [Example](#example)
@@ -13,21 +13,11 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Simple Neuron
 
-Simple Neuron is my project of simple python neural network library. It's easy to use and illustrates how neural networks works.
 
-[TOC]
 
-## Requirements
 
-```python
-import numpy
-```
-
-Simple neuron uses numpy python library so you need to have it installed before using it.
-
-## How it works?
+# How it works? - Theory
 
 
 #### Neurons
