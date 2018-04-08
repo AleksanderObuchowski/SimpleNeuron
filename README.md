@@ -94,11 +94,14 @@ _ _ _
 In order for neural network to learn it first has to know about the mistakes it's making. Let's concider following example:
 ![erroer](https://i.imgur.com/0897Cjp.png)
 
-Lest's say we guessed the value of Y1 but it's wrong and we know the error. Let's call this error EY1. What should be the error of X1 or X2? One might say we should split the errror of Y1 evenly becouse there are two nodes connected to Y1, so error of X1 should be 1/2 of error of Y1 and error of X2 should be 1/2 of error of Y1. Well it's generaly not a good wey of doung this, beause we can see that weight comming from X2 is 3 times larger than the of of X1. Because of that X2 contributes to the mistake of Y1 3 times as much as X1. Therefore it would be better to describe the error of X1 as 1/4 the error of Y1 and error of X2 as 3/4 the error of Y1. Whis can lead to general principle:   
+Lest's say we guessed the value of Y1 but it's wrong and we know the error. Let's call this error EY1. What should be the error of X1 or X2? One might say we should split the errror of Y1 evenly becouse there are two nodes connected to Y1, so error of X1 should be 1/2 of error of Y1 and error of X2 should be 1/2 of error of Y1. Well it's generaly not a good wey of doung this, beause we can see that weight comming from X2 is 3 times larger than the of of X1. Because of that X2 contributes to the mistake of Y1 3 times as much as X1. Therefore it would be better to describe the error of X1 as 1/4 the error of Y1 and error of X2 as 3/4 the error of Y1. Whis can lead to general principle:
+<br/>
 
 
 
 ![](https://i.imgur.com/NV1ZNFR.png)  
+<br/>
+
 ![](https://i.imgur.com/G88y0W7.png)  
 
 ### Errors on layers
@@ -113,9 +116,10 @@ Lest's say we guessed the value of Y1 but it's wrong and we know the error. Let'
 
 ![](https://i.imgur.com/NfLZ1Bi.png)  
 
-If we consider the following example then we see that X1 and X2 contribute to not only the error of Y1 but also Y2. Therefore their error should come for both Y1 and Y2. If we write it in equation it should look like this:  
+If we consider the following example then we see that X1 and X2 contribute to not only the error of Y1 but also Y2. Therefore their error should come for both Y1 and Y2. If we write it in equation it should look like this:
+<br/>
 ![](https://i.imgur.com/meU10hK.png)  
-
+<br/>
 ![](https://i.imgur.com/ktDUcdk.png)  
 If we again write it in marices we would get something like this:
 
