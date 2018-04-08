@@ -94,12 +94,12 @@ _ _ _
 In order for neural network to learn it first has to know about the mistakes it's making. Let's concider following example:
 ![erroer](https://i.imgur.com/0897Cjp.png)
 
-Lest's say we guessed the value of Y1 but it's wrong and we know the error. Let's call this error EY1. What should be the error of X1 or X2? One might say we should split the errror of Y1 evenly becouse there are two nodes connected to Y1, so error of X1 should be 1/2 of error of Y1 and error of X2 should be 1/2 of error of Y1. Well it's generaly not a good wey of doung this, beause we can see that weight comming from X2 is 3 times larger than the of of X1. Because of that X2 contributes to the mistake of Y1 3 times as much as X1. Therefore it would be better to describe the error of X1 as 1/4 the error of Y1 and error of X2 as 3/4 the error of Y1. Whis can lead to general principle: 
+Lest's say we guessed the value of Y1 but it's wrong and we know the error. Let's call this error EY1. What should be the error of X1 or X2? One might say we should split the errror of Y1 evenly becouse there are two nodes connected to Y1, so error of X1 should be 1/2 of error of Y1 and error of X2 should be 1/2 of error of Y1. Well it's generaly not a good wey of doung this, beause we can see that weight comming from X2 is 3 times larger than the of of X1. Because of that X2 contributes to the mistake of Y1 3 times as much as X1. Therefore it would be better to describe the error of X1 as 1/4 the error of Y1 and error of X2 as 3/4 the error of Y1. Whis can lead to general principle:   
 
-_ _ _
 
-![](https://i.imgur.com/NV1ZNFR.png)
-![](https://i.imgur.com/G88y0W7.png)
+
+![](https://i.imgur.com/NV1ZNFR.png)  
+![](https://i.imgur.com/G88y0W7.png)  
 
 ### Errors on layers
 
@@ -111,27 +111,27 @@ _ _ _
 
 
 
-![](https://i.imgur.com/NfLZ1Bi.png)
+![](https://i.imgur.com/NfLZ1Bi.png)  
 
-If we consider the following example then we see that X1 and X2 contribute to not only the error of Y1 but also Y2. Therefore their error should come for both Y1 and Y2. If we write it in equation it should look like this:
-![](https://i.imgur.com/meU10hK.png)
+If we consider the following example then we see that X1 and X2 contribute to not only the error of Y1 but also Y2. Therefore their error should come for both Y1 and Y2. If we write it in equation it should look like this:  
+![](https://i.imgur.com/meU10hK.png)  
 
-![](https://i.imgur.com/ktDUcdk.png)
+![](https://i.imgur.com/ktDUcdk.png)  
 If we again write it in marices we would get something like this:
 
-![](https://i.imgur.com/T8alM7z.png)
+![](https://i.imgur.com/T8alM7z.png)  
 
 We can then ommint the values in the denominator. If we do this we only loose the information about the normalization of the errors not the information about how much each weight contributs to it.
 
-![](https://i.imgur.com/xpZOn4h.png)
+![](https://i.imgur.com/xpZOn4h.png)  
 
 We can now see then the weight matrix is the same one what we have been using for to feed forward values between the layers, exept now it's transposed what means it is flipped along the diagonal line. And if you think about it, it makes perfect sence, we are now going backawrds instead of forward what means we need to invert the matrix:
 
-![](https://i.imgur.com/CutKCIe.png)
+![](https://i.imgur.com/CutKCIe.png)  
 
-We can now write the general priciple: 
+We can now write the general priciple:  
 
-![](https://i.imgur.com/HX7j6p7.png)
+![](https://i.imgur.com/HX7j6p7.png)  
 
 With this alghoritm we can desribe errors from the end to the beggigng of the neural network
 
