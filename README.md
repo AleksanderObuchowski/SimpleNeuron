@@ -159,7 +159,7 @@ If we calculate the derivative we can show it like that:
 <br/>
 ![](https://i.imgur.com/aqe5Z2p.png)
 <br/>
-Then we can use the **chain rule ** to expand the derivative:
+Then we can use the **chain rule** to expand the derivative:
 <br/>
 ![](https://i.imgur.com/H8zAwhk.png)
 <br/>
@@ -171,7 +171,7 @@ Then we can can write the output **O** as an activation function applied over we
 <br/>
 ![](https://i.imgur.com/NUdDiUn.png)
 <br/>
-Then we can calculate the derivtive of activation fuction using **chain rule**
+Then we can calculate the derivtive of activation fuction using **chain rule** 
 <br/>
 ![](https://i.imgur.com/MWc94GV.png)
 <br/>
