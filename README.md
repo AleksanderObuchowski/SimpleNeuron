@@ -143,6 +143,58 @@ With this alghoritm we can desribe errors from the end to the beggigng of the ne
 - - -
 Ok we now know the erros but how can we adjust the weight to correct them?
 
+Firstly we will have to define error function **E**:
+
+![](https://i.imgur.com/8PjnGMo.png)
+
+Where **C** is the correct value of the ourput and **O** is the output of the nueral network
+We are calculationg the squar of the difference in order to make the value of it always possitive and also have a function that has only one minimum
+
+Secondly we are goint to calculate the **derivative** of the error function to know how it changes and which way to go to reach the minimum of the error fucntion.
+
+
+![](https://i.imgur.com/QRU9veo.png)
+
+If we calculate the derivative we can show it like that:
+
+![](https://i.imgur.com/aqe5Z2p.png)
+
+Then we can use the **chain rule ** to expand the derivative:
+
+![](https://i.imgur.com/H8zAwhk.png)
+
+Then we can calculate the derivative of the error function over output
+
+![](https://i.imgur.com/CfWclM9.png)
+
+Then we can can write the output **O** as an activation function applied over weighted output of the previous layer:
+
+![](https://i.imgur.com/NUdDiUn.png)
+
+Then we can calculate the derivtive of activation fuction using **chain rule**
+
+![](https://i.imgur.com/MWc94GV.png)
+
+Then in order to calculate the new value of weight we need to **subtract** the derivative form the previous value. That is because the derviative tells us in the function increase and, as you remeber we want to go downhill.
+
+![](https://i.imgur.com/2VGbWq8.png)
+Then we can write the equation in a slightly cleaner way:
+![](https://i.imgur.com/KP91T81.png)
+Now we need to remember we are going backwards once again so our weights matrix needs to be transposed 
+![](https://i.imgur.com/PRSyZ3L.png)
+Now we need to introduce variable called **learning rate** .
+This variable, ranged form 0 to 1 will tell us how much we want weights to change
+Generally we dont want to go with difference of weights because we might miss the minimum. 
+![](https://i.imgur.com/V5aeZ0u.png)
+
+The steps we are taking ar proportional to the derivative so you can see then when the function is steeper we take bigger steps, when it tends to minimum we take smalller and smaller steps meking our calculations more accurate.
+Too small learning rate however can leat to very slow updates as well as stucking in local minimum which is not the lobal one.
+
+If we take to concederation the learning rate our general equation would look like this
+![](https://i.imgur.com/NYfoLYp.png)
+
+Theat's the whole theory behind a simple neural network !
+![](http://)
 
 
 # HOW IT WORKS  - PYTHON
