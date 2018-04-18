@@ -152,9 +152,9 @@ We are calculationg the square of the difference in order to make the value of i
 
 Secondly we are going to calculate the **derivative** of the error function to know how it changes and which way to go to reach the minimum of the error function.
 
-<br/>
+
 ![](https://i.imgur.com/QRU9veo.png)
-<br/>
+
 If we calculate the derivative, we can show it like that:
 <br/>
 ![](https://i.imgur.com/aqe5Z2p.png)
